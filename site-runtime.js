@@ -1,6 +1,5 @@
 (function () {
   var EXPIRES_AT = "2026-04-08T21:31:46+08:00";
-  var HOME_PATHS = ["/", "/index.html"];
   var LINK_MAP = {
     "https://www.uemo.net/tools/preview/id/3457": "./brand/",
     "https://www.uemo.net/tools/preview/id/3503": "./ui/",
@@ -29,7 +28,14 @@
   }
 
   function rewriteHomeLinks() {
-    if (!HOME_PATHS.includes(window.location.pathname)) {
+    var pathname = window.location.pathname;
+    var isHomePage =
+      pathname === "/" ||
+      pathname === "/index.html" ||
+      pathname.endsWith("/tt-portfolio-site/") ||
+      pathname.endsWith("/tt-portfolio-site/index.html");
+
+    if (!isHomePage) {
       return;
     }
 
