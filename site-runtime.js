@@ -50,14 +50,33 @@
     });
   }
 
+  function optimizeImages() {
+    var images = document.querySelectorAll("img");
+    images.forEach(function (img, index) {
+      img.decoding = "async";
+
+      if (index < 2) {
+        img.loading = "eager";
+        img.fetchPriority = "high";
+      } else {
+        img.loading = "lazy";
+        img.fetchPriority = "low";
+      }
+    });
+  }
+
   if (isExpired()) {
     showExpiredPage();
     return;
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", rewriteHomeLinks);
+    document.addEventListener("DOMContentLoaded", function () {
+      rewriteHomeLinks();
+      optimizeImages();
+    });
   } else {
     rewriteHomeLinks();
+    optimizeImages();
   }
 })();
