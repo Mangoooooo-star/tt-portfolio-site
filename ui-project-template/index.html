@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mangoooooo Portfolio</title>
+  <meta name="description" content="UI 项目展示模板。" />
+  <link rel="shortcut icon" href="../mangoooo.ico" type="image/x-icon" />
+  <script src="../site-runtime.js"></script>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --panel: #ffffff;
+      --text: #12141c;
+      --muted: #7f8490;
+      --line: #e7e8ec;
+      --accent: #3f57ff;
+      --shadow: 0 20px 70px rgba(18, 20, 28, 0.08);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(63, 87, 255, 0.08), transparent 20%),
+        linear-gradient(180deg, #fafafc 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1320px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 72px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+    }
+
+    .hero {
+      margin-top: 28px;
+      padding: 44px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border: 2px dashed #d8dce5;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(38px, 6vw, 84px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .subheading {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      max-width: 860px;
+      margin: 30px 0 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 420px minmax(0, 1fr);
+      gap: 28px;
+      margin-top: 36px;
+      align-items: stretch;
+    }
+
+    .summary-card {
+      min-height: 760px;
+      padding: 40px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #3550ff 0%, #4b57ff 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary-card .icon {
+      width: 108px;
+      height: 108px;
+      border: 4px dashed rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .summary-card h2 {
+      margin: 48px 0 18px;
+      font-size: 42px;
+      line-height: 1.12;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: auto;
+      padding-top: 40px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 58px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .feature-panel {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 760px;
+    }
+
+    .feature-image {
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #f3f4f8;
+      border: 1px solid #edf0f5;
+    }
+
+    .feature-image img,
+    .content-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .section {
+      margin-top: 34px;
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: #fff;
+      font-size: 13px;
+    }
+
+    .section h3 {
+      margin: 18px 0 12px;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 26px;
+      margin-top: 28px;
+    }
+
+    .content-image {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+    }
+
+    .note {
+      margin-top: 40px;
+      padding: 20px 22px;
+      border: 1px dashed #cad0dc;
+      border-radius: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: #eff2f8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1100px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card,
+      .feature-panel {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 24px, 1320px);
+      }
+
+      .hero,
+      .section {
+        padding: 24px;
+      }
+
+      .summary-card {
+        padding: 28px;
+      }
+
+      .summary-card h2 {
+        font-size: 34px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- 这里是返回按钮，一般不用改；如果以后你想返回别的页面，再改 href -->
+    <a class="back" href="../ui/">返回 UI 子页面</a>
+
+    <!-- 项目头图区域开始：这里放项目总标题、项目简介、左右双栏主视觉 -->
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <!-- 这里改小标签，比如：更高效 / 流程优化 / 模板系统 -->
+          <span class="eyebrow">项目模板</span>
+          <!-- 这里改项目英文或主标题 -->
+          <h1>Project Title</h1>
+          <!-- 这里改项目中文副标题或模块名称 -->
+          <p class="subheading">项目副标题 / 模块名称</p>
+        </div>
+      </div>
+
+      <!-- 这里改项目总介绍，写 1 到 3 句话最合适 -->
+      <p class="intro">
+        这里写这个项目的总介绍。建议 1 到 3 句话，说明项目目标、你负责的部分、以及这个项目最核心的设计亮点。
+      </p>
+
+      <div class="main-grid">
+        <article class="summary-card">
+          <!-- 左侧蓝色卡的圆形标识，可以改成：UI / APP / WEB / CRM 等短词 -->
+          <div class="icon">UI</div>
+          <!-- 这里改左侧蓝色卡的大标题 -->
+          <h2>项目亮点大标题</h2>
+          <!-- 这里改左侧蓝色卡的说明文案 -->
+          <p>
+            这里对应你截图左侧的蓝色信息卡内容。可以写项目核心目标、设计方法、流程优化方向，或者这个项目对业务的价值。
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <!-- 这里改第一个数字 -->
+              <strong>18</strong>
+              <!-- 这里改第一个数字下的说明 -->
+              <span>可替换成<br />项目数字信息</span>
+            </div>
+            <div class="stat">
+              <!-- 这里改第二个数字 -->
+              <strong>2</strong>
+              <!-- 这里改第二个数字下的说明 -->
+              <span>可替换成<br />项目数字信息</span>
+            </div>
+            <div class="stat">
+              <!-- 这里改第三个数字 -->
+              <strong>4</strong>
+              <!-- 这里改第三个数字下的说明 -->
+              <span>可替换成<br />项目数字信息</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="feature-panel">
+          <div>
+            <!-- 这里改右侧主内容的小标签 -->
+            <span class="section-label">这里写标签，例如：更高效</span>
+            <!-- 这里改右侧主标题 -->
+            <h3>这里写右侧主标题</h3>
+            <!-- 这里改右侧主标题下面的说明 -->
+            <p>
+              这里写右侧这部分的解释性文案。建议用 1 到 2 句话，概括这个模块的作用和价值。
+            </p>
+          </div>
+
+          <div class="feature-image">
+            <!-- 这里换右侧主视觉图；把 src 改成你的图片路径 -->
+            <img src="../ui/images/a1887ccfcc29332a7410c7ca793632c5.png" alt="右侧主视觉图" />
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- 项目头图区域结束 -->
+
+    <!-- 内容模块 A：以后每新增一段项目内容，就复制整个 section -->
+    <section class="section">
+      <!-- 这里改模块标签 -->
+      <span class="section-label">内容模块 A</span>
+      <!-- 这里改模块标题 -->
+      <h3>这里写该项目下面的第一个内容分区标题</h3>
+      <!-- 这里改模块说明文字 -->
+      <p>
+        从这里开始，对应你说的“截图以下内容”。你可以把这个项目后面的所有内容按一个个模块拆开，每个模块都包含：标签、标题、介绍文字、内容大图。
+      </p>
+
+      <div class="content-stack">
+        <div class="content-image">
+          <!-- 这里换模块图片 -->
+          <img src="../ui/images/e34e77bddbd13cfad0925bcbbcbfb8af.jpg" alt="内容展示图 1" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 内容模块 B：如果项目还有更多内容，继续复制这种 section -->
+    <section class="section">
+      <!-- 这里改模块标签 -->
+      <span class="section-label">内容模块 B</span>
+      <!-- 这里改模块标题 -->
+      <h3>这里写第二个内容分区标题</h3>
+      <!-- 这里改模块说明文字 -->
+      <p>
+        如果这个项目还有第二段、第三段内容，就继续复制这一整个 <code>section</code> 模块，再替换标题、文字和图片。
+      </p>
+
+      <div class="content-stack">
+        <div class="content-image">
+          <!-- 这里换模块图片 -->
+          <img src="../ui/images/6bc27c3e71028a6017bd2bfc7f7badd2.jpg" alt="内容展示图 2" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 这里是使用说明，不影响页面结构；你后续也可以保留或删除 -->
+    <div class="note">
+      使用方式：复制整个 <code>ui-project-template</code> 文件夹，重命名为新的英文目录名，比如 <code>ui-project-02</code>，然后把这个文件里的标题、正文和图片全部替换成你的新项目内容。以后如果你要把这个新项目接入 UI 子页面首页入口，再回到 <code>ui/index.html</code> 增加一个入口链接。
+    </div>
+  </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 (function () {
-  var EXPIRES_AT = "2026-04-08T21:31:46+08:00";
+  var EXPIRES_AT = "2026-05-10T23:00:00+08:00";
   var LINK_MAP = {
     "https://www.uemo.net/tools/preview/id/3457": "./brand/",
     "https://www.uemo.net/tools/preview/id/3503": "./ui/",
@@ -24,7 +24,7 @@
       'p{margin:0;color:rgba(255,255,255,.78);font-size:16px;}' +
       '</style>' +
       '</head>' +
-      '<body><main class="wrap"><div class="badge">Expired</div><h1>这个作品集链接已失效</h1><p>该页面仅限 3 天内访问，已于 2026-04-08 21:31:46 (UTC+8) 过期。</p></main></body>';
+      '<body><main class="wrap"><div class="badge">Expired</div><h1>这个作品集链接已失效</h1><p>该页面仅限临时访问，已于 2026-05-10 23:00:00 (UTC+8) 过期。</p></main></body>';
   }
 
   function rewriteHomeLinks() {

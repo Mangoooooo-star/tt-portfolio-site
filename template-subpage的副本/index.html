@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mangoooooo Portfolio</title>
+  <meta name="description" content="Mangoooooo Portfolio 项目展示页。" />
+  <link rel="shortcut icon" href="../mangoooo.ico" type="image/x-icon" />
+  <script src="../site-runtime.js"></script>
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --text: #161616;
+      --muted: #6e6e6e;
+      --line: #dfd8d0;
+      --card: #ffffff;
+      --accent: #d84c34;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(216, 76, 52, 0.08), transparent 24%),
+        linear-gradient(180deg, #fbf8f4 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 20px 0;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 28px 0 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(216, 76, 52, 0.1);
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(36px, 6vw, 72px);
+      line-height: 0.95;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .meta-label {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-image {
+      margin: 24px 0 56px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-image img,
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .section {
+      padding: 0 0 52px;
+    }
+
+    .section h2 {
+      margin: 0 0 16px;
+      font-size: 28px;
+    }
+
+    .section p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+    }
+
+    .footer {
+      padding: 16px 0 52px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 780px) {
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back" href="../">返回首页</a>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Template</span>
+      <h1>包晴天</h1>
+      <p class="intro">
+        这里写这个项目的简短介绍。建议 1 到 2 句话，说明项目类型、目标和你负责的部分。
+      </p>
+
+      <div class="meta">
+        <div class="meta-card">
+          <div class="meta-label">Category</div>
+          <div>品牌设计 / UI 设计 / 视觉设计</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Role</div>
+          <div>视觉设计 / UI 设计 / 品牌升级</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Year</div>
+          <div>2026</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hero-image">
+      <img src="../images/a4216628467c6a8527a3862d7c353df0.png" alt="项目主视觉" />
+    </div>
+
+    <section class="section">
+      <h2>项目背景</h2>
+      <p>
+        这里写项目背景、商业目标、用户需求或者设计挑战。后续如果内容较长，可以分成 2 到 3 个小段落。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>设计亮点</h2>
+      <p>
+        这里写你希望重点展示的设计思路，比如视觉语言、信息结构、交互策略、版式系统或者品牌表达方式。
+      </p>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="../images/637e86375f0d934cfa676f629660dc19.jpg" alt="项目展示图 1" />
+        </div>
+        <div class="gallery-item">
+          <img src="../images/4210cf1ef526e05228b6423a2f5e5531.jpg" alt="项目展示图 2" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>结果与总结</h2>
+      <p>
+        这里写项目产出、上线效果、视觉统一成果，或者你对这个项目的复盘总结。
+      </p>
+    </section>
+
+    <div class="footer">
+      使用方法：复制整个 `template-subpage` 文件夹，重命名为新的英文目录名，再替换页面文字和图片。
+    </div>
+  </div>
+</body>
+</html>
